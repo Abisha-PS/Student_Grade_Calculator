@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Performance Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <h2>STUDENT</h2>
+            <span>HUB</span>
+        </div>
+
+        <nav>
+
+            <button class="side-btn dashboard-btn"
+                    onclick="showPage('dashboard')">
+                🏠 Dashboard
+            </button>
+
+            <button class="side-btn profile-btn"
+                    onclick="showPage('profile')">
+                👤 Student Profile
+            </button>
+
+            <button class="side-btn marks-btn"
+                    onclick="showPage('marks')">
+                📝 Enter Marks
+            </button>
+
+            <button class="side-btn grade-btn"
+                    onclick="showPage('grade')">
+                📊 Grade System
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            Student Performance Hub<br>
+            HTML • CSS • JavaScript
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
+
+        <section id="dashboard" class="page active">
+
+            <h1>Student Performance Dashboard</h1>
+
+            <p class="subtitle">
+                Manage marks, calculate grades and understand
+                your academic performance.
+            </p>
+
+
+            <!-- HERO -->
+
+            <div class="hero">
+
+                <div class="hero-text">
+
+                    <h2>Calculate Your Academic Success</h2>
+
+                    <p>
+                        Enter your details and marks to generate
+                        a complete performance report.
+                    </p>
+
+                </div>
+
+                <button class="btn blue"
+                        onclick="showPage('profile')">
+                    BEGIN →
+                </button>
+
+            </div>
+
+
+            <!-- FEATURE CARDS -->
+
+            <div class="feature-cards">
+
+                <div class="feature-card">
+
+                    <div class="number blue-text">
+                        01
+                    </div>
+
+                    <h3>Student Profile</h3>
+
+                    <p>
+                        Enter student information.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="number purple-text">
+                        02
+                    </div>
+
+                    <h3>Mark Analysis</h3>
+
+                    <p>
+                        Enter and validate subject marks.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="number green-text">
+                        03
+                    </div>
+
+                    <h3>Smart Result</h3>
+
+                    <p>
+                        Get grade and performance insights.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+
+            <div class="info-card">
+
+                <h3>
+                    What this application provides
+                </h3>
+
+                <p>
+                    ✓ Total Marks &nbsp;&nbsp;
+                    ✓ Average &nbsp;&nbsp;
+                    ✓ Percentage &nbsp;&nbsp;
+                    ✓ Grade &nbsp;&nbsp;
+                    ✓ Pass/Fail &nbsp;&nbsp;
+                    ✓ Subject Analysis
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STUDENT PROFILE
+             ================================================= -->
+
+        <section id="profile" class="page">
+
+            <h1>Student Profile</h1>
+
+            <p class="subtitle">
+                Create your academic profile before entering marks.
+            </p>
+
+
+            <div class="form-card">
+
+                <div class="form-group">
+
+                    <label>
+                        Student Name
+                    </label>
+
+                    <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter student name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Roll Number
+                    </label>
+
+                    <input
+                            type="text"
+                            id="rollNumber"
+                            placeholder="Enter roll number">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Department
+                    </label>
+
+                    <input
+                            type="text"
+                            id="department"
+                            placeholder="Enter department">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Academic Year
+                    </label>
+
+                    <select id="academicYear">
+
+                        <option value="First Year">
+                            First Year
+                        </option>
+
+                        <option value="Second Year">
+                            Second Year
+                        </option>
+
+                        <option value="Third Year">
+                            Third Year
+                        </option>
+
+                        <option value="Final Year">
+                            Final Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                            class="btn blue"
+                            onclick="validateStudent()">
+
+                        CONTINUE TO MARKS →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MARKS PAGE
+             ================================================= -->
+
+        <section id="marks" class="page">
+
+            <h1>Subject Performance</h1>
+
+            <p class="subtitle">
+                Enter marks for all five subjects.
+            </p>
+
+
+            <div class="marks-card">
+
+
+                <!-- JAVA -->
+
+                <div class="subject-row">
+
+                    <label>
+                        1. Java Programming
+                    </label>
+
+                    <input
+                            type="number"
+                            id="mark0"
+                            min="0"
+                            max="100"
+                            placeholder="0 - 100">
+
+                </div>
+
+
+                <!-- DATA STRUCTURES -->
+
+                <div class="subject-row">
+
+                    <label>
+                        2. Data Structures
+                    </label>
+
+                    <input
+                            type="number"
+                            id="mark1"
+                            min="0"
+                            max="100"
+                            placeholder="0 - 100">
+
+                </div>
+
+
+                <!-- DATABASE -->
+
+                <div class="subject-row">
+
+                    <label>
+                        3. Database Management
+                    </label>
+
+                    <input
+                            type="number"
+                            id="mark2"
+                            min="0"
+                            max="100"
+                            placeholder="0 - 100">
+
+                </div>
+
+
+                <!-- NETWORKS -->
+
+                <div class="subject-row">
+
+                    <label>
+                        4. Computer Networks
+                    </label>
+
+                    <input
+                            type="number"
+                            id="mark3"
+                            min="0"
+                            max="100"
+                            placeholder="0 - 100">
+
+                </div>
+
+
+                <!-- OPERATING SYSTEM -->
+
+                <div class="subject-row">
+
+                    <label>
+                        5. Operating Systems
+                    </label>
+
+                    <input
+                            type="number"
+                            id="mark4"
+                            min="0"
+                            max="100"
+                            placeholder="0 - 100">
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                            class="btn dark"
+                            onclick="showPage('profile')">
+
+                        ← BACK
+
+                    </button>
+
+                    <button
+                            class="btn green"
+                            onclick="calculateResult()">
+
+                        GENERATE RESULT
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULT PAGE
+             ================================================= -->
+
+        <section id="result" class="page">
+
+            <h1>Performance Report</h1>
+
+            <p class="subtitle">
+                Detailed academic analysis of your marks.
+            </p>
+
+
+            <!-- STUDENT HEADER -->
+
+            <div class="student-header">
+
+                <div>
+
+                    <h2 id="resultName">
+                        Student
+                    </h2>
+
+                    <p id="resultDetails">
+                        Roll Number | Department | Year
+                    </p>
+
+                </div>
+
+                <div class="grade-badge">
+
+                    GRADE
+                    <span id="resultGrade">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat-card blue-border">
+
+                    <h4>TOTAL</h4>
+
+                    <strong id="totalMarks">
+                        0 / 500
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card purple-border">
+
+                    <h4>AVERAGE</h4>
+
+                    <strong id="average">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card orange-border">
+
+                    <h4>PERCENTAGE</h4>
+
+                    <strong id="percentage">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card green-border"
+                     id="statusCard">
+
+                    <h4>STATUS</h4>
+
+                    <strong id="status">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT PERFORMANCE -->
+
+            <div class="performance-card">
+
+                <h2>
+                    Subject-wise Performance
+                </h2>
+
+
+                <div class="performance-row">
+
+                    <span>
+                        Java Programming
+                    </span>
+
+                    <div class="progress-container">
+
+                        <div
+                                class="progress-bar"
+                                id="progress0">
+                        </div>
+
+                    </div>
+
+                    <strong id="score0">
+                        0 / 100
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-row">
+
+                    <span>
+                        Data Structures
+                    </span>
+
+                    <div class="progress-container">
+
+                        <div
+                                class="progress-bar"
+                                id="progress1">
+                        </div>
+
+                    </div>
+
+                    <strong id="score1">
+                        0 / 100
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-row">
+
+                    <span>
+                        Database Management
+                    </span>
+
+                    <div class="progress-container">
+
+                        <div
+                                class="progress-bar"
+                                id="progress2">
+                        </div>
+
+                    </div>
+
+                    <strong id="score2">
+                        0 / 100
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-row">
+
+                    <span>
+                        Computer Networks
+                    </span>
+
+                    <div class="progress-container">
+
+                        <div
+                                class="progress-bar"
+                                id="progress3">
+                        </div>
+
+                    </div>
+
+                    <strong id="score3">
+                        0 / 100
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-row">
+
+                    <span>
+                        Operating Systems
+                    </span>
+
+                    <div class="progress-container">
+
+                        <div
+                                class="progress-bar"
+                                id="progress4">
+                        </div>
+
+                    </div>
+
+                    <strong id="score4">
+                        0 / 100
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMARK -->
+
+            <div class="remark">
+
+                <strong>
+                    Performance Remark:
+                </strong>
+
+                <span id="remark">
+                    -
+                </span>
+
+            </div>
+
+
+            <!-- RESULT BUTTONS -->
+
+            <div class="result-buttons">
+
+                <button
+                        class="btn dark"
+                        onclick="showPage('marks')">
+
+                    ← EDIT MARKS
+
+                </button>
+
+
+                <button
+                        class="btn purple"
+                        onclick="showPage('grade')">
+
+                    GRADE SYSTEM
+
+                </button>
+
+
+                <button
+                        class="btn blue"
+                        onclick="resetApplication()">
+
+                    NEW STUDENT
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GRADE SYSTEM
+             ================================================= -->
+
+        <section id="grade" class="page">
+
+            <h1>Academic Grading System</h1>
+
+            <p class="subtitle">
+                Understand how percentage is converted into grades.
+            </p>
+
+
+            <div class="grade-table">
+
+                <div class="table-header">
+                    <span>PERCENTAGE</span>
+                    <span>GRADE</span>
+                    <span>DESCRIPTION</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>90 - 100%</span>
+                    <span>A+</span>
+                    <span>Outstanding</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>80 - 89%</span>
+                    <span>A</span>
+                    <span>Excellent</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>70 - 79%</span>
+                    <span>B</span>
+                    <span>Very Good</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>60 - 69%</span>
+                    <span>C</span>
+                    <span>Good</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>50 - 59%</span>
+                    <span>D</span>
+                    <span>Average</span>
+                </div>
+
+
+                <div class="table-row">
+                    <span>Below 50%</span>
+                    <span>F</span>
+                    <span>Needs Improvement</span>
+                </div>
+
+            </div>
+
+
+            <div class="passing-rule">
+
+                <h3>
+                    PASSING RULE
+                </h3>
+
+                <p>
+                    A minimum of 35 marks is required
+                    in every individual subject.
+                </p>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                        class="btn blue"
+                        onclick="showPage('dashboard')">
+
+                    ← BACK TO DASHBOARD
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
